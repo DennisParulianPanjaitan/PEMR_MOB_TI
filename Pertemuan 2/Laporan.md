@@ -40,6 +40,4 @@ Dart menggunakan struktur OOP dengan operator yang berfungsi sebagai metode dala
 * Bab 6 : Mengenal Kode Program
 
 
-## Soal 4
-
 
