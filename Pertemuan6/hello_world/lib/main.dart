@@ -1,65 +1,69 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/basic_widgets/checkbox_widget.dart';
-import 'package:hello_world/basic_widgets/date_picker_widget.dart';
-import 'package:hello_world/basic_widgets/fab_widget.dart';
-import 'package:hello_world/basic_widgets/loading_cupertino.dart';
-import 'package:hello_world/basic_widgets/textfield_widget.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    // Step 4: Implementing the title row (titleSection)
+    Widget titleSection = Container(
+      padding: const EdgeInsets.all(16), // Padding for the whole section
+      child: Row(
+        children: [
+          Expanded(
+            // soal 1: Column cross axis alignment
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start, // Align to start
+              children: [
+                // soal 2: Padding and bold text for the title
+                Container(
+                  padding: const EdgeInsets.only(
+                      bottom: 10), // Padding below the title
+
+                  child: const Text(
+                    'Wisata Gunung di Batu',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold, // Bold style for the title
+                    ),
+                  ),
+                ),
+
+                const Text(
+                  'Batu, Malang, Indonesia',
+                  style: TextStyle(
+                    color: Colors.grey, // Subtext color
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // soal 3: Icon and text for rating
+          const Icon(
+            Icons.star, // Star icon
+            color: Colors.red, // Red colored star
+          ),
+          const Text('41'), // Number next to the star
+        ],
+      ),
+    );
+
+    return MaterialApp(
+      title: 'Flutter layout: Nama dan NIM Anda',
       home: Scaffold(
-        body: DatePickerWidget(),
+        appBar: AppBar(
+          title: const Text('Dennis Parulian Panjaitan'),
+        ),
+        body: Column(
+          children: [
+            titleSection, // Display the title section
+            const Center(
+              child: Text('Hello World'),
+            ),
+          ],
+        ),
       ),
     );
   }
-}
-
-class MyLayout extends StatelessWidget {
-  const MyLayout({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.center,
-      child: ElevatedButton(
-        child: const Text('Show alert'),
-        onPressed: () {
-          showAlertDialog(context);
-        },
-      ),
-    );
-  }
-}
-
-void showAlertDialog(BuildContext context) {
-  // Setup tombol OK
-  Widget okButton = TextButton(
-    child: const Text("OK"),
-    onPressed: () {
-      Navigator.pop(context);
-    },
-  );
-
-  // Setup dialog
-  AlertDialog alert = AlertDialog(
-    title: const Text("My title"),
-    content: const Text("This is my message."),
-    actions: [okButton],
-  );
-
-  // Tampilkan dialog
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return alert;
-    },
-  );
 }
