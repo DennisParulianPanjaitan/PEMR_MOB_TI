@@ -79,8 +79,14 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Dennis Parulian Panjaitan'),
         ),
-        body: Column(
+        body: ListView(
           children: [
+            Image.asset(
+              'assets/logo_polinema.jpeg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
             titleSection, // Display the title section
             buttonSection,
             textSection,
