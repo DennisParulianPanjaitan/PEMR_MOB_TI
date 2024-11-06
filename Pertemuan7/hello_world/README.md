@@ -1,16 +1,15 @@
-# hello_world
+# Laporan Praktikum Flutter
 
-A new Flutter project.
+## Deskripsi Praktikum
+Pada praktikum ini, kami diminta untuk membuat aplikasi Flutter sederhana yang menggunakan widget `AutoSizeText` di dalam `RedTextWidget`. Kami juga diminta untuk membandingkan penggunaan `AutoSizeText` dan `Text` biasa.
 
-## Getting Started
+## Langkah-Langkah Praktikum
 
-This project is a starting point for a Flutter application.
+1. **Langkah 2**: Membuat file `red_text_widget.dart` dan menginisialisasi widget `RedTextWidget` sebagai dasar aplikasi.
+2. **Langkah 5**: Menambahkan variabel `text` di dalam `RedTextWidget` agar teks bisa ditampilkan secara dinamis.
+3. **Langkah 6**: Menambahkan dua widget `Container`, satu berisi `RedTextWidget` dan satu lagi berisi `Text` biasa.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Penjelasan Plugin auto_size_text
+Plugin `auto_size_text` digunakan untuk membuat teks yang ukurannya bisa disesuaikan secara otomatis agar tidak terpotong. Parameter seperti `maxLines`, `minFontSize`, dan `overflow` digunakan untuk mengontrol tampilan teks.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
